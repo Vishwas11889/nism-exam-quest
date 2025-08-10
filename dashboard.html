@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - NISM Mock Test Platform</title>
+    <meta name="description" content="Your personalized NISM certification preparation dashboard with progress tracking and test access.">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="dashboard-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h2>NISM Prep</h2>
+            </div>
+            <div class="nav-user">
+                <div class="user-info">
+                    <span class="user-name" id="userName">Loading...</span>
+                    <span class="user-plan" id="userPlan">Starter Plan</span>
+                </div>
+                <div class="user-menu">
+                    <button class="user-avatar" id="userMenuBtn">
+                        <span id="userInitials">U</span>
+                    </button>
+                    <div class="user-dropdown" id="userDropdown">
+                        <a href="profile.html" class="dropdown-item">Profile</a>
+                        <a href="billing.html" class="dropdown-item">Billing</a>
+                        <a href="#" class="dropdown-item" id="logoutBtn">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+        <div class="container">
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <div class="welcome-content">
+                    <h1>Welcome back, <span id="welcomeName">User</span>!</h1>
+                    <p>Ready to continue your NISM certification journey?</p>
+                </div>
+                <div class="quick-stats">
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalTests">0</div>
+                        <div class="stat-label">Tests Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="averageScore">0%</div>
+                        <div class="stat-label">Average Score</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="timeSpent">0h</div>
+                        <div class="stat-label">Time Spent</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Progress Overview -->
+            <section class="progress-section">
+                <h2>Your Progress</h2>
+                <div class="progress-cards">
+                    <div class="progress-card">
+                        <h3>Overall Progress</h3>
+                        <div class="progress-circle">
+                            <svg viewBox="0 0 36 36" class="circular-chart">
+                                <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                <path class="circle" stroke-dasharray="65, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                            </svg>
+                            <div class="progress-text">
+                                <span class="progress-value">65%</span>
+                                <span class="progress-label">Complete</span>
+                            </div>
+                        </div>
+                        <div class="progress-details">
+                            <div class="detail-item">
+                                <span>Practice Tests</span>
+                                <span>8/12</span>
+                            </div>
+                            <div class="detail-item">
+                                <span>Final Mocks</span>
+                                <span>2/7</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="progress-card">
+                        <h3>Recent Performance</h3>
+                        <div class="performance-chart">
+                            <div class="chart-bars">
+                                <div class="bar" style="height: 60%">
+                                    <span class="bar-value">60%</span>
+                                </div>
+                                <div class="bar" style="height: 75%">
+                                    <span class="bar-value">75%</span>
+                                </div>
+                                <div class="bar" style="height: 80%">
+                                    <span class="bar-value">80%</span>
+                                </div>
+                                <div class="bar" style="height: 85%">
+                                    <span class="bar-value">85%</span>
+                                </div>
+                                <div class="bar" style="height: 90%">
+                                    <span class="bar-value">90%</span>
+                                </div>
+                            </div>
+                            <div class="chart-labels">
+                                <span>Mon</span>
+                                <span>Tue</span>
+                                <span>Wed</span>
+                                <span>Thu</span>
+                                <span>Fri</span>
+                            </div>
+                        </div>
+                        <p class="performance-note">+15% improvement this week 📈</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Modules Section -->
+            <section class="modules-section">
+                <div class="section-header">
+                    <h2>NISM Modules</h2>
+                    <div class="section-actions">
+                        <button class="btn btn-outline" id="upgradeBtn">Upgrade Plan</button>
+                    </div>
+                </div>
+
+                <div class="modules-grid">
+                    <!-- Mutual Funds Module -->
+                    <div class="module-card" data-module="mutual-funds">
+                        <div class="module-header">
+                            <div class="module-icon">💰</div>
+                            <div class="module-info">
+                                <h3>Mutual Funds Basics</h3>
+                                <span class="module-badge">Series V-A</span>
+                            </div>
+                            <div class="module-progress">
+                                <div class="progress-ring">
+                                    <svg class="progress-ring-svg" width="50" height="50">
+                                        <circle cx="25" cy="25" r="20" stroke="#E2E8F0" stroke-width="4" fill="transparent"/>
+                                        <circle cx="25" cy="25" r="20" stroke="#22C55E" stroke-width="4" fill="transparent" 
+                                                stroke-dasharray="125.6" stroke-dashoffset="37.68" stroke-linecap="round"/>
+                                    </svg>
+                                    <span class="progress-percent">70%</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="module-content">
+                            <div class="module-stats">
+                                <div class="stat">
+                                    <span class="stat-value">150+</span>
+                                    <span class="stat-label">Questions</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">5</span>
+                                    <span class="stat-label">Practice Tests</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">2</span>
+                                    <span class="stat-label">Final Mocks</span>
+                                </div>
+                            </div>
+
+                            <div class="test-types">
+                                <div class="test-type">
+                                    <h4>Practice Tests</h4>
+                                    <p>Self-paced learning with detailed explanations</p>
+                                    <div class="test-list">
+                                        <div class="test-item completed">
+                                            <span class="test-name">Fund Structures & Types</span>
+                                            <span class="test-score">85%</span>
+                                        </div>
+                                        <div class="test-item completed">
+                                            <span class="test-name">NAV Calculations</span>
+                                            <span class="test-score">78%</span>
+                                        </div>
+                                        <div class="test-item">
+                                            <span class="test-name">Investment Strategies</span>
+                                            <button class="btn btn-sm btn-primary">Start</button>
+                                        </div>
+                                        <div class="test-item locked">
+                                            <span class="test-name">Regulatory Framework</span>
+                                            <span class="test-lock">🔒</span>
+                                        </div>
+                                        <div class="test-item locked">
+                                            <span class="test-name">Risk Management</span>
+                                            <span class="test-lock">🔒</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="test-type">
+                                    <h4>Final Mock Tests</h4>
+                                    <p>Timed tests simulating real exam conditions</p>
+                                    <div class="test-list">
+                                        <div class="test-item">
+                                            <span class="test-name">Mock Test 1</span>
+                                            <button class="btn btn-sm btn-secondary">Take Test</button>
+                                        </div>
+                                        <div class="test-item locked">
+                                            <span class="test-name">Mock Test 2</span>
+                                            <span class="test-lock">🔒</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Equity Derivatives Module -->
+                    <div class="module-card" data-module="equity-derivatives">
+                        <div class="module-header">
+                            <div class="module-icon">📈</div>
+                            <div class="module-info">
+                                <h3>Equity Derivatives</h3>
+                                <span class="module-badge">Series VIII</span>
+                            </div>
+                            <div class="module-progress">
+                                <div class="progress-ring">
+                                    <svg class="progress-ring-svg" width="50" height="50">
+                                        <circle cx="25" cy="25" r="20" stroke="#E2E8F0" stroke-width="4" fill="transparent"/>
+                                        <circle cx="25" cy="25" r="20" stroke="#22C55E" stroke-width="4" fill="transparent" 
+                                                stroke-dasharray="125.6" stroke-dashoffset="100.48" stroke-linecap="round"/>
+                                    </svg>
+                                    <span class="progress-percent">20%</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="module-content">
+                            <div class="module-stats">
+                                <div class="stat">
+                                    <span class="stat-value">200+</span>
+                                    <span class="stat-label">Questions</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">8</span>
+                                    <span class="stat-label">Practice Tests</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">3</span>
+                                    <span class="stat-label">Final Mocks</span>
+                                </div>
+                            </div>
+
+                            <div class="test-types">
+                                <div class="test-type">
+                                    <h4>Practice Tests</h4>
+                                    <p>Master options and futures concepts</p>
+                                    <div class="test-list">
+                                        <div class="test-item completed">
+                                            <span class="test-name">Options Basics</span>
+                                            <span class="test-score">72%</span>
+                                        </div>
+                                        <div class="test-item">
+                                            <span class="test-name">Futures Contracts</span>
+                                            <button class="btn btn-sm btn-primary">Start</button>
+                                        </div>
+                                        <div class="test-item locked">
+                                            <span class="test-name">Pricing Models</span>
+                                            <span class="test-lock">🔒</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="test-type">
+                                    <h4>Final Mock Tests</h4>
+                                    <p>Comprehensive exam preparation</p>
+                                    <div class="test-list">
+                                        <div class="test-item locked">
+                                            <span class="test-name">Mock Test 1</span>
+                                            <span class="test-lock">🔒</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Currency Derivatives Module -->
+                    <div class="module-card" data-module="currency-derivatives">
+                        <div class="module-header">
+                            <div class="module-icon">💱</div>
+                            <div class="module-info">
+                                <h3>Currency Derivatives</h3>
+                                <span class="module-badge">Series IV</span>
+                            </div>
+                            <div class="module-progress">
+                                <div class="progress-ring">
+                                    <svg class="progress-ring-svg" width="50" height="50">
+                                        <circle cx="25" cy="25" r="20" stroke="#E2E8F0" stroke-width="4" fill="transparent"/>
+                                        <circle cx="25" cy="25" r="20" stroke="#22C55E" stroke-width="4" fill="transparent" 
+                                                stroke-dasharray="125.6" stroke-dashoffset="125.6" stroke-linecap="round"/>
+                                    </svg>
+                                    <span class="progress-percent">0%</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="module-content">
+                            <div class="module-stats">
+                                <div class="stat">
+                                    <span class="stat-value">100+</span>
+                                    <span class="stat-label">Questions</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">4</span>
+                                    <span class="stat-label">Practice Tests</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">2</span>
+                                    <span class="stat-label">Final Mocks</span>
+                                </div>
+                            </div>
+
+                            <div class="test-types">
+                                <div class="test-type">
+                                    <h4>Practice Tests</h4>
+                                    <p>Currency markets and hedging strategies</p>
+                                    <div class="test-list">
+                                        <div class="test-item">
+                                            <span class="test-name">Currency Markets Basics</span>
+                                            <button class="btn btn-sm btn-primary">Start</button>
+                                        </div>
+                                        <div class="test-item locked">
+                                            <span class="test-name">Hedging Strategies</span>
+                                            <span class="test-lock">🔒</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="test-type">
+                                    <h4>Final Mock Tests</h4>
+                                    <p>Complete assessment preparation</p>
+                                    <div class="test-list">
+                                        <div class="test-item locked">
+                                            <span class="test-name">Mock Test 1</span>
+                                            <span class="test-lock">🔒</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Activity -->
+            <section class="activity-section">
+                <h2>Recent Activity</h2>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon success">✓</div>
+                        <div class="activity-content">
+                            <h4>Completed NAV Calculations Test</h4>
+                            <p>Scored 78% on Mutual Funds practice test</p>
+                            <span class="activity-time">2 hours ago</span>
+                        </div>
+                        <a href="test-result.html?id=123" class="btn btn-sm btn-outline">View Results</a>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon progress">⏳</div>
+                        <div class="activity-content">
+                            <h4>Started Options Basics Test</h4>
+                            <p>Currently in progress - Equity Derivatives module</p>
+                            <span class="activity-time">Yesterday</span>
+                        </div>
+                        <a href="test.html?continue=456" class="btn btn-sm btn-primary">Continue</a>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon achievement">🏆</div>
+                        <div class="activity-content">
+                            <h4>Achievement Unlocked</h4>
+                            <p>Completed first module with 80%+ average score</p>
+                            <span class="activity-time">3 days ago</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Upgrade Modal -->
+    <div class="modal-overlay" id="upgradeModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Upgrade Your Plan</h3>
+                <button class="modal-close" id="closeUpgrade">&times;</button>
+            </div>
+            <div class="modal-content">
+                <p>Unlock unlimited tests and advanced features with Pro Learner plan.</p>
+                <div class="upgrade-features">
+                    <div class="feature">✓ Unlimited practice tests</div>
+                    <div class="feature">✓ Advanced progress tracking</div>
+                    <div class="feature">✓ All module access</div>
+                    <div class="feature">✓ Priority support</div>
+                </div>
+                <div class="upgrade-pricing">
+                    <span class="price">₹299/month</span>
+                    <span class="savings">Save 30% with annual plan</span>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-outline" id="cancelUpgrade">Maybe Later</button>
+                <button class="btn btn-primary">Upgrade Now</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

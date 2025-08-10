@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - NISM Mock Test Platform</title>
+    <meta name="description" content="Create your account and start your NISM certification journey with our comprehensive mock test platform.">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <div class="auth-logo">
+                    <h2>NISM Prep</h2>
+                </div>
+                <h1>Create Your Account</h1>
+                <p>Start your journey to NISM certification success</p>
+            </div>
+
+            <div id="alert-container"></div>
+
+            <form class="auth-form" id="registerForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" class="form-input" required>
+                        <div class="form-error" id="firstName-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" class="form-input" required>
+                        <div class="form-error" id="lastName-error"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="email">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-input" required>
+                    <div class="form-error" id="email-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="password">Password</label>
+                    <input type="password" id="password" name="password" class="form-input" required>
+                    <div class="form-error" id="password-error"></div>
+                    <div class="password-requirements">
+                        <small>Password must be at least 8 characters with letters and numbers</small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" required>
+                    <div class="form-error" id="confirmPassword-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                        <span class="checkmark"></span>
+                        I agree to the <a href="#" class="text-link">Terms of Service</a> and <a href="#" class="text-link">Privacy Policy</a>
+                    </label>
+                    <div class="form-error" id="agreeTerms-error"></div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full btn-large" id="registerBtn">
+                    <span class="btn-text">Create Account</span>
+                    <div class="spinner hidden" id="registerSpinner"></div>
+                </button>
+            </form>
+
+            <div class="auth-divider">
+                <span>or</span>
+            </div>
+
+            <div class="social-login">
+                <button class="btn btn-outline btn-full social-btn" id="googleSignup">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                    </svg>
+                    Continue with Google
+                </button>
+            </div>
+
+            <div class="auth-footer">
+                <p>Already have an account? <a href="login.html" class="text-link">Sign in</a></p>
+            </div>
+        </div>
+
+        <div class="auth-visual">
+            <div class="visual-content">
+                <h3>Join 15,000+ Successful Professionals</h3>
+                <div class="success-stats">
+                    <div class="stat">
+                        <div class="stat-number">78%</div>
+                        <div class="stat-label">Average Pass Rate</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">450+</div>
+                        <div class="stat-label">Practice Questions</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">2x</div>
+                        <div class="stat-label">Faster Preparation</div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <blockquote>
+                        "The mock tests were incredibly realistic and helped me pass my NISM certification on the first attempt. The detailed explanations made all the difference."
+                    </blockquote>
+                    <cite>— Priya Sharma, Investment Advisor</cite>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

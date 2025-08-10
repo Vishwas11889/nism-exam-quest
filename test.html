@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - NISM Mock Test Platform</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/test.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="test-container">
+        <!-- Test Header -->
+        <header class="test-header">
+            <div class="test-info">
+                <h1 id="testTitle">Loading Test...</h1>
+                <p id="testDescription">Preparing your questions...</p>
+            </div>
+            <div class="test-timer" id="testTimer" style="display: none;">
+                <span class="timer-label">Time Remaining:</span>
+                <span class="timer-display" id="timerDisplay">30:00</span>
+            </div>
+        </header>
+
+        <!-- Test Content -->
+        <main class="test-main">
+            <div class="test-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <span class="progress-text" id="progressText">Question 1 of 25</span>
+            </div>
+
+            <div class="question-container">
+                <div class="question-content" id="questionContent">
+                    <h2 id="questionText">Loading question...</h2>
+                    <div class="options" id="optionsContainer">
+                        <!-- Options will be loaded here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="test-navigation">
+                <button class="btn btn-outline" id="prevBtn" disabled>Previous</button>
+                <div class="question-navigator" id="questionNavigator">
+                    <!-- Question numbers will be loaded here -->
+                </div>
+                <button class="btn btn-primary" id="nextBtn">Next</button>
+            </div>
+
+            <div class="test-actions">
+                <button class="btn btn-secondary" id="flagBtn">Flag for Review</button>
+                <button class="btn btn-outline" id="pauseBtn" style="display: none;">Pause Test</button>
+                <button class="btn btn-primary" id="submitBtn">Submit Test</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Submit Confirmation Modal -->
+    <div class="modal-overlay" id="submitModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Submit Test</h3>
+            </div>
+            <div class="modal-content">
+                <p>Are you sure you want to submit your test?</p>
+                <div class="submit-summary">
+                    <div class="summary-item">
+                        <span>Answered:</span>
+                        <span id="answeredCount">0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Flagged:</span>
+                        <span id="flaggedCount">0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Remaining:</span>
+                        <span id="remainingCount">0</span>
+                    </div>
+                </div>
+                <p class="warning-text">You cannot change your answers after submission.</p>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-outline" id="cancelSubmit">Review Answers</button>
+                <button class="btn btn-primary" id="confirmSubmit">Submit Test</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/test.js"></script>
+</body>
+</html>

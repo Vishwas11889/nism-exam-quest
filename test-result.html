@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Results - NISM Mock Test Platform</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/results.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="results-container">
+        <header class="results-header">
+            <h1>Test Results</h1>
+            <a href="dashboard.html" class="btn btn-outline">Back to Dashboard</a>
+        </header>
+
+        <main class="results-main">
+            <div class="results-summary">
+                <div class="score-circle">
+                    <div class="score-value" id="scoreValue">0%</div>
+                    <div class="score-label">Your Score</div>
+                </div>
+                <div class="summary-stats">
+                    <div class="stat-item">
+                        <span class="stat-value" id="correctCount">0</span>
+                        <span class="stat-label">Correct</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="incorrectCount">0</span>
+                        <span class="stat-label">Incorrect</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="timeSpent">0m</span>
+                        <span class="stat-label">Time</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-review" id="questionReview">
+                <!-- Questions will be loaded here -->
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!requireAuth()) return;
+            
+            const urlParams = new URLSearchParams(window.location.search);
+            const resultId = urlParams.get('id');
+            
+            if (!resultId) {
+                window.location.href = 'dashboard.html';
+                return;
+            }
+            
+            // Load test result
+            const progress = progressManager.getProgress();
+            const result = progress.history.find(h => h.id == resultId);
+            
+            if (!result) {
+                window.location.href = 'dashboard.html';
+                return;
+            }
+            
+            // Display results
+            document.getElementById('scoreValue').textContent = result.score + '%';
+            document.getElementById('timeSpent').textContent = Math.floor(result.timeSpent / 60) + 'm';
+        });
+    </script>
+</body>
+</html>

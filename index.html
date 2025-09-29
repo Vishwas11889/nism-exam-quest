@@ -1,37 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NISM Mock Test Platform - Master Your Financial Certification</title>
-    <meta name="description" content="Prepare for NISM certifications with 450+ questions, realistic mock tests, and smart analytics. 78% average pass rate, 2x faster preparation.">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/landing.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <h2>NISM Prep</h2>
-            </div>
-            <div class="nav-links">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#modules" class="nav-link">Modules</a>
-                <a href="#faq" class="nav-link">FAQ</a>
-                <a href="login.html" class="nav-link">Login</a>
-                <a href="register.html" class="btn btn-primary">Start Free Test</a>
-            </div>
-            <div class="nav-mobile-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+    <title>NISM Mock Test Platform - Master Your Financial Certification | Top-Rated Prep Course</title>
+    <meta name="description" content="Master NISM certifications with India's #1 prep platform. 450+ practice questions, realistic mock tests, smart analytics. 78% pass rate, 15K+ success stories. Start today!">
+    <meta name="keywords" content="NISM certification, NISM mock test, financial certification, mutual funds, derivatives, securities market, exam preparation, practice tests">
+    
+    <!-- Include Header -->
+    <script>
+        fetch('includes/header.html')
+            .then(response => response.text())
+            .then(data => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(data, 'text/html');
+                
+                // Add head elements
+                const headElements = doc.head.children;
+                for (let element of headElements) {
+                    document.head.appendChild(element.cloneNode(true));
+                }
+                
+                // Add navigation
+                const nav = doc.querySelector('nav');
+                document.body.insertBefore(nav.cloneNode(true), document.body.firstChild);
+            });
+    </script>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -61,7 +50,7 @@
                 </div>
 
                 <div class="hero-actions">
-                    <a href="register.html" class="btn btn-primary btn-large">Start Free Test Now</a>
+                    <a href="pricing.html" class="btn btn-primary btn-large">View Pricing Plans</a>
                     <a href="#features" class="btn btn-outline">Learn More</a>
                 </div>
             </div>
@@ -216,7 +205,7 @@
                         <li>Mobile-friendly access</li>
                         <li>Limited quiz history</li>
                     </ul>
-                    <a href="register.html" class="btn btn-outline btn-full">Get Started</a>
+                    <a href="pricing.html" class="btn btn-outline btn-full">View All Plans</a>
                 </div>
                 <div class="pricing-card featured">
                     <div class="pricing-header">
@@ -231,7 +220,7 @@
                         <li>Full quiz history</li>
                         <li>Priority support</li>
                     </ul>
-                    <a href="register.html" class="btn btn-primary btn-full">Start Free Trial</a>
+                    <a href="pricing.html" class="btn btn-primary btn-full">Choose Plan</a>
                 </div>
                 <div class="pricing-card">
                     <div class="pricing-header">
@@ -246,7 +235,7 @@
                         <li>Early access to content</li>
                         <li>Premium support</li>
                     </ul>
-                    <a href="register.html" class="btn btn-primary btn-full">Save 30%</a>
+                    <a href="pricing.html" class="btn btn-primary btn-full">Choose Plan</a>
                 </div>
             </div>
         </div>
@@ -316,61 +305,30 @@
                 <h2>Ready to Accelerate Your NISM Preparation?</h2>
                 <p>Join thousands of financial professionals who've succeeded with our platform</p>
                 <div class="cta-actions">
-                    <a href="register.html" class="btn btn-primary btn-large">Start Your Free Test Now</a>
-                    <p class="cta-note">No credit card required • Instant access • Cancel anytime</p>
+                    <a href="pricing.html" class="btn btn-primary btn-large">View Pricing Plans</a>
+                    <p class="cta-note">Professional certification preparation • 78% pass rate • Expert support</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>NISM Prep</h3>
-                    <p>Empowering financial professionals with world-class certification preparation.</p>
-                    <div class="footer-stats">
-                        <span>15K+ Success Stories</span>
-                        <span>78% Pass Rate</span>
-                        <span>450+ Questions</span>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Platform</h4>
-                    <ul>
-                        <li><a href="#modules">NISM Modules</a></li>
-                        <li><a href="login.html">Practice Tests</a></li>
-                        <li><a href="login.html">Mock Exams</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="#faq">FAQ</a></li>
-                        <li><a href="mailto:support@nismprep.com">Help Center</a></li>
-                        <li><a href="#">Study Guides</a></li>
-                        <li><a href="mailto:contact@nismprep.com">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Careers</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 NISM Prep Platform. All rights reserved. | Designed for financial professionals by experts.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Include Footer -->
+    <script>
+        fetch('includes/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(data, 'text/html');
+                const footer = doc.querySelector('footer');
+                const scripts = doc.querySelectorAll('script');
+                
+                document.body.appendChild(footer.cloneNode(true));
+                scripts.forEach(script => {
+                    if (script.src && !document.querySelector(`script[src="${script.src}"]`)) {
+                        document.body.appendChild(script.cloneNode(true));
+                    }
+                });
+            });
+    </script>
 
-    <script src="js/main.js"></script>
     <script src="js/landing.js"></script>
-</body>
-</html>
